@@ -15,19 +15,19 @@ function App() {
 }`);
 const runCode = async () => {
 
-  const res = await fetch("http://localhost:5000/run", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
+  const res = await fetch("http://localhost:5000/run",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json"
     },
-    body: JSON.stringify({ code })
+    body:JSON.stringify({code})
   });
 
   const data = await res.json();
 
-  alert(data.output);
+  console.log(data.steps);
 
-};
+}
 
   return (
     <div style={{height:"85vh",display:"flex",width:"50vw",flexDirection:"column"}}>
